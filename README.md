@@ -47,7 +47,6 @@ _**The Conserver** is a money management tool designed to give you full control 
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
@@ -57,7 +56,7 @@ _**The Conserver** is a money management tool designed to give you full control 
 |     Express      | Web app framework for API development.     |
 |      Rails       | Web app framework for Ruby.                |
 
-<br>
+
 
 ### Client (Front End)
 
