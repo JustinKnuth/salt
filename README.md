@@ -66,7 +66,7 @@ _**The Conserver** is a money management tool designed to give you full control 
 
 ![Un-authenticated landing page](https://github.com/JustinKnuth/theConserver/blob/main/assets/unauth-screens.png)
 
-####Authenticated Screens
+#### Authenticated Screens
 
 ![Authenticated screens](https://github.com/JustinKnuth/theConserver/blob/main/assets/auth-screens.png)
 
