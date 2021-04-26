@@ -52,8 +52,7 @@ _**The Conserver** is a money management tool designed to give you full control 
 | :--------------: | :----------------------------------------- |
 |      React       | Flexible JS library for UI creation.       |
 |   React Router   | URL manager for site navigation.           |
-|.     Axios       | Promise based HTTP client.                 |
-|     Express      | Web app framework for API development.     |
+|      Axios       | Promise based HTTP client.                 |
 |      Rails       | Web app framework for Ruby.                |
 
 
