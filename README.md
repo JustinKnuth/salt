@@ -63,33 +63,15 @@ _**The Conserver** is a money management tool designed to give you full control 
 #### Wireframes
 
 
-![Dummy Link](url)
+![Un-authenticated landing page](https://github.com/JustinKnuth/theConserver/blob/main/assets/unauth-screens.png)
 
-- Desktop Landing
+![Authenticated screens](https://github.com/JustinKnuth/theConserver/blob/main/assets/auth-screens.png)
 
-![Dummy Link](url)
 
-- Desktop Hero
-
-![Dummy Link](url)
-
-- Resource Index
-
-![Dummy Link](url)
-
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
 
 #### Component Tree
 
-
+![Component hierarchy](https://github.com/JustinKnuth/theConserver/blob/main/assets/component-hierarchy.png)
 
 #### Component Architecture
 
@@ -141,7 +123,7 @@ src
 
 #### ERD Model
 
-
+![ERD model](https://github.com/JustinKnuth/theConserver/blob/main/assets/erd.png)
 
 ## Post-MVP
 
@@ -150,7 +132,6 @@ src
 - Add an investments page with market trends and news
 
 
-***
 
 ## Code Showcase
 
