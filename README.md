@@ -2,13 +2,6 @@
 Money Management Tool
 
 
-
-# PROJECT 4 README <!-- omit in toc -->
-
-> The Project Planning section **should be completed** for your project pitch with instructors.
->
-> To ensure correct Markdown, copy and paste the raw template code into your project repo README file. Remove ALL template instructions and replace with your project details.
-
 - [Overview](#overview)
 - [MVP](#mvp)
   - [Goals](#goals)
@@ -24,32 +17,33 @@ Money Management Tool
 - [Code Showcase](#code-showcase)
 - [Code Issues & Resolutions](#code-issues--resolutions)
 
-<br>
+
 
 ## Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
+_**The Conserver** is a money management tool designed to give you full control over your assets. TC aims to provide a solid platform for which one can enter their assets, bills due, deposits and more on a monthly basis. Plan ahead and write out your bills due over the course of the year, to stay on top of your finances. Enter your current assets and available money in both checking and savings. Set dates for expected deposits and withdrawals for more control. This tool can put more money back in your pocket over time, all while providing a user-friendly, easy-to-use, secure platform for asset management._
 
 
-<br>
+## MVP 
 
-## MVP
+- React App with organized file structure and full CRUD
+- Structure website(jsx) in a clean and readable fashion
+- Style website(CSS) using flex-box and grid
+- Create an API using Express
+- Utilize a Ruby on Rails database to store user data in the back-end
+- Create an authentication feature for the site
+- Provide an easy-to-use experience 
+- Write easy-to-read DRY code
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
-
-<br>
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- Free user-friendly platform for asset-management
+- Help users save money over time
+- Give users full control over their money
+- Allow users to see their incoming and outgoing funds monthly
+- Help people become better at saving and managing their funds
 
-<br>
 
 ### Libraries and Dependencies
 
@@ -57,11 +51,11 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | Flexible JS library for UI creation.       |
+|   React Router   | URL manager for site navigation.           |
+|.     Axios       | Promise based HTTP client.                 |
+|     Express      | Web app framework for API development.     |
+|      Rails       | Web app framework for Ruby.                |
 
 <br>
 
@@ -69,7 +63,6 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
 
 ![Dummy Link](url)
 
@@ -97,13 +90,9 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
 
-[Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
 
 #### Component Architecture
-
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
 
 ``` structure
 
@@ -114,7 +103,14 @@ src
       |__ images
       |__ mockups
 |__ components/
-      |__ Header.jsx
+      |__ Home.jsx
+      |__ AccountOverview.jsx
+      |__ BillsDue.jsx
+      |__ Transactions.jsx
+      |__ Accounts.jsx
+      |__ Layout.jsx
+      |__ Nav.jsx
+      |__ Footer.jsx
 |__ services/
 
 ```
@@ -123,37 +119,42 @@ src
 
 > Use this section to estimate the time necessary to build out each of the components you've described above.
 
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Planning / Preparation  | H | 3hrs |  |  |
+| Research Similar Products | L | 2hrs |  |  |
+| Core Structure  | H | 3hr |  |  |
+| Pseudocode  | L | 1hr |  |  |
+| Create and read functions for API  | H | 3hrs |  |  |
+| Retrieve Correct Data  | H | 3hrs |  |  |
+| Render Correct Data | H | 3hrs |  |  |
+| Media Queries | H | 3hrs |  |  |
+| Navigation Menu Creation and Style | H | 2.5hrs |  |  |
+| Create User-Friendly Experience | H | 3hrs |  |  |
+| Debugging | H | 3hrs |  |  |
+| Code Organization for Readability | H | 2hrs |  |  |
+| Image-Sizing | H |  |  |  |
+| Total | H | 33.5hrs |  |  |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
-<br>
 
 ### Server (Back End)
 
 #### ERD Model
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
 
-[ERD Sample](https://drive.google.com/file/d/1kLyQTZqfcA4jjKWQexfEkG2UspyclK8Q/view)
-<br>
-
-***
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- Incorporate a third-party api to render a new motivational quote on the home screen everyday
+- Add colorful graphs for enhanced visualization of account
+- Add an investments page with market trends and news
+
 
 ***
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
 
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
