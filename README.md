@@ -86,13 +86,12 @@ src
       |__ mockups
 |__ components/
       |__ Home.jsx
+      |__ MainComponent.jsx
       |__ BlogDetails.jsx
       |__ SignUp.jsx
       |__ SignIn.jsx
       |__ AllBlogs.jsx
-      |__ About.jsx
-      |__ Contact.jsx
-      |__ Layout.jsx
+      |__ CreatePost.jsx
       |__ Nav.jsx
       |__ Footer.jsx
 |__ services/
