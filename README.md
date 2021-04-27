@@ -62,11 +62,11 @@ _**Salt** is a blog designed, developed, and authored by a Coding Bootcamp grad.
 
 
 
-![Wireframes](https://github.com/JustinKnuth/theConserver/blob/main/assets/Wireframes-1.png)
+![Wireframes](https://github.com/JustinKnuth/theConserver/blob/main/assets/Wireframe-1.png)
 
 
 
-![Wireframes](https://github.com/JustinKnuth/theConserver/blob/main/assets/Wireframes-2.png)
+![Wireframes](https://github.com/JustinKnuth/theConserver/blob/main/assets/Wireframe-2.png)
 
 
 
@@ -126,7 +126,7 @@ src
 
 #### ERD Model
 
-![ERD model](https://github.com/JustinKnuth/theConserver/blob/main/assets/erd.png)
+![ERD model](https://github.com/JustinKnuth/theConserver/blob/main/assets/ERD.png)
 
 ## Post-MVP
 
