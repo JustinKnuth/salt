@@ -1,4 +1,4 @@
-# theConserver
+# Salt.
 Money Management Tool
 
 
@@ -21,7 +21,7 @@ Money Management Tool
 
 ## Overview
 
-_**The Conserver** is a money management tool designed to give you full control over your assets. TC aims to provide a solid platform for which one can enter their assets, bills due, deposits and more on a monthly basis. Plan ahead and write out your bills due over the course of the year, to stay on top of your finances. Enter your current assets and available money in both checking and savings. Set dates for expected deposits and withdrawals for more control. This tool can put more money back in your pocket over time, all while providing a user-friendly, easy-to-use, secure platform for asset management._
+_**Salt** is a blog designed, developed, and authored by a Coding Bootcamp grad. The blog was created to fill a void in a world full of information. Specifically, Salt is designed for future Coding Bootcamp students, current students and ex-students. For someone who is interested in a Coding Bootcamp, its sometimes hard to find real experiences from real grads. Instead, you find larger websites with writers who never attended a Coding Bootcamp, but have developed their own opinions. The purpose of this blog is to allow an open space for people in the beginning, middle and end stages of their Coding Bootcamp journey. Future students can find real answers from grads. Grads can provide guidance for people interested in taking the leap. Current students can talk about what they have gone through and provide some insight. At the end of the day, Salt is a place for truth, real experiences and questions or concerns, all related to Coding Bootcamps._
 
 
 ## MVP 
@@ -38,11 +38,11 @@ _**The Conserver** is a money management tool designed to give you full control 
 
 ### Goals
 
-- Free user-friendly platform for asset-management
-- Help users save money over time
-- Give users full control over their money
-- Allow users to see their incoming and outgoing funds monthly
-- Help people become better at saving and managing their funds
+- Free user-friendly blog
+- Help users find answers 
+- Give users ability to post experiences
+- Allow users to post without signup
+- Help people find assitance when they need it
 
 
 ### Libraries and Dependencies
@@ -87,10 +87,10 @@ src
       |__ mockups
 |__ components/
       |__ Home.jsx
-      |__ AccountOverview.jsx
-      |__ BillsDue.jsx
-      |__ Transactions.jsx
-      |__ Accounts.jsx
+      |__ BlogDetails.jsx
+      |__ AllBlogs.jsx
+      |__ About.jsx
+      |__ Contact.jsx
       |__ Layout.jsx
       |__ Nav.jsx
       |__ Footer.jsx
@@ -130,7 +130,6 @@ src
 ## Post-MVP
 
 - Incorporate a third-party api to render a new motivational quote on the home screen everyday
-- Add colorful graphs for enhanced visualization of account
 - Add an investments page with market trends and news
 
 
