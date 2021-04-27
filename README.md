@@ -72,7 +72,7 @@ _**Salt** is a blog designed, developed, and authored by a Coding Bootcamp grad.
 
 #### Component Tree
 
-![Component hierarchy](https://github.com/JustinKnuth/theConserver/blob/main/assets/Component-hierarchy.png)
+![Component hierarchy](https://github.com/JustinKnuth/theConserver/blob/main/assets/hierarchy.png)
 
 #### Component Architecture
 
