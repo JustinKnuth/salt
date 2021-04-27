@@ -1,5 +1,5 @@
 # Salt.
-Money Management Tool
+Blog
 
 
 - [Overview](#overview)
