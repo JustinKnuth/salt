@@ -41,7 +41,6 @@ _**Salt** is a blog designed, developed, and authored by a Coding Bootcamp grad.
 - Free user-friendly blog
 - Help users find answers 
 - Give users ability to post experiences
-- Allow users to post without signup
 - Help people find assitance when they need it
 
 
@@ -61,19 +60,19 @@ _**Salt** is a blog designed, developed, and authored by a Coding Bootcamp grad.
 
 ### Wireframes
 
-#### Un-authenticated Landing Page
 
-![Un-authenticated landing page](https://github.com/JustinKnuth/theConserver/blob/main/assets/unauth-screens.png)
 
-#### Authenticated Screens
+![Wireframes](https://github.com/JustinKnuth/theConserver/blob/main/assets/Wireframes-1.png)
 
-![Authenticated screens](https://github.com/JustinKnuth/theConserver/blob/main/assets/auth-screens.png)
+
+
+![Wireframes](https://github.com/JustinKnuth/theConserver/blob/main/assets/Wireframes-2.png)
 
 
 
 #### Component Tree
 
-![Component hierarchy](https://github.com/JustinKnuth/theConserver/blob/main/assets/component-hierarchy.png)
+![Component hierarchy](https://github.com/JustinKnuth/theConserver/blob/main/assets/Component-hierarchy.png)
 
 #### Component Architecture
 
@@ -88,6 +87,8 @@ src
 |__ components/
       |__ Home.jsx
       |__ BlogDetails.jsx
+      |__ SignUp.jsx
+      |__ SignIn.jsx
       |__ AllBlogs.jsx
       |__ About.jsx
       |__ Contact.jsx
