@@ -29,17 +29,15 @@ _**Salt** is a blog designed, developed, and authored by a Coding Bootcamp grad.
 - React App with organized file structure and full CRUD
 - Structure website(jsx) in a clean and readable fashion
 - Style website(CSS) using flex-box and grid
-- Create an API using Express
-- Utilize a Ruby on Rails database to store user data in the back-end
+- Create an API using Ruby on Rails
+- Utilize a postgresql database to store user data in the back-end
 - Create an authentication feature for the site
-- Provide an easy-to-use experience 
-- Write easy-to-read DRY code
 
 
 ### Goals
 
 - Free user-friendly blog
-- Help users find answers 
+- Help future coders find answers 
 - Give users ability to post experiences
 - Help people find assitance when they need it
 
