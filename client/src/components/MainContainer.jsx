@@ -5,6 +5,7 @@ import { Switch, Route, useHistory } from "react-router-dom"
 import AllBlogs from "./AllBlogs"
 import EditPost from "./EditPost"
 import CreateBlog from "./CreateBlog"
+import BlogDetails from "./BlogDetails"
 
 export default function MainContainer(props) {
   const [posts, setPosts] = useState([])
@@ -62,6 +63,10 @@ export default function MainContainer(props) {
           handleCreate={handleCreate}
 
         />
+      </Route>
+      <Route path='/posts/:id'>
+        <BlogDetails
+          comments={comments}/>
       </Route>
       <Route path="/posts">
         <AllBlogs

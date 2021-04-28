@@ -12,9 +12,11 @@ export default function AllBlogs(props) {
       <h1>Posts</h1>
       {posts.map(post => (
         <React.Fragment key={post.id}>
+
+          <Link to={`/posts/${post.id}`}>
           <p>{post.title}</p>
-          {/* {console.log(post.user_id)} */}
-          {console.log(currentUser)}
+          </Link>
+     
 
           {
             currentUser?.id === post.user_id &&
