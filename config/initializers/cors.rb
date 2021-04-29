@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'salt-blog.surge.sh'
+    origins 'https://salt-blog.surge.sh'
 
     resource '*',
       headers: :any,
