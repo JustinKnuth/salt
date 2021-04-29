@@ -43,15 +43,18 @@ function App() {
     <div>
       <Nav
         currentUser={currentUser}
-        handleLogout={handleLogout}/>
+        handleLogout={handleLogout} />
       <hr />
+
       <Switch>
         <Route path="/login">
           <SignIn handleLogin={handleLogin} />
         </Route>
+
         <Route path="/register">
           <SignUp handleRegister={handleRegister} />
         </Route>
+
         <Route path="/">
           <MainContainer
             currentUser={currentUser}/>
