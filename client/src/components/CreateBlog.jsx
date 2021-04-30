@@ -8,10 +8,10 @@ export default function CreatePost(props) {
     title: '',
     author: '',
     content: '',
-    
+
   })
   const { title, author, content } = formData
- const { handleCreate } = props
+  const { handleCreate } = props
 
 
 
@@ -27,37 +27,43 @@ export default function CreatePost(props) {
 
 
   return (
-    <form onSubmit={(e) => {
+    <center>
+
+    <form className="create-form" onSubmit={(e) => {
       e.preventDefault()
       handleCreate(formData)
     }}>
-      <h1>Create Post</h1>
-      <label>Title:
+      <h1 style={{ textAlign: 'center' }}>Create Post</h1>
+      <label>Title <br/>
        <input
+          className='create-inputs'
           type="text"
           name='title'
           value={title}
           onChange={handleChange}
         />
-      </label>
-      <label>author:
+      </label> <br/>
+      <label>Author <br/>
        <input
+          className='create-inputs'
           type="text"
           name='author'
           value={author}
           onChange={handleChange}
-        />
+        /> <br/>
       </label>
-      <label>content:
-       <input
+      <label>Content <br/>
+       <textarea
+          className='create-textarea'
           type="text"
           name='content'
           value={content}
           onChange={handleChange}
         />
-      </label>
-      
+      </label> <br/>
+
       <button>Submit</button>
     </form>
+    </center>
   )
 }

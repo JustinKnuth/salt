@@ -20,31 +20,32 @@ export default function SignUp(props) {
 
 
   return (
+    <center>
     <form onSubmit={(e) => {
       e.preventDefault()
       handleRegister(formData)
     }}>
 
       <h1>Register</h1>
-      <label>
-        Username:
+      <label>Username <br/>
       <input
+          className='create-inputs'
           type="text"
           name="username"
           value={username}
           onChange={handleChange} />
-      </label>
+      </label> <br/>
       <br/>
-      <label>
-        Password:
+        <label>Password <br/>
        <input
+          className='create-inputs'
           type="text"
           name="password"
           value={password}
           onChange={handleChange} />
-      </label>
-      <button>Submit</button>
+      </label> <br/>
+      <button>Submit</button> <br/>
     </form>
-
+    </center>
   )
 }

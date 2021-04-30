@@ -6,30 +6,39 @@ export default function AllBlogs(props) {
   const { posts, handleDelete, currentUser } = props
 
 
+  
+
 
   return (
     <div>
-      <h1>Posts</h1>
+      <h1 style= {{ textAlign: 'center' }}>Posts</h1>
       {posts.map(post => (
-        <React.Fragment key={post.id}>
+        <div className='post-container' key={post.id}>
 
           <Link to={`/posts/${post.id}`}>
-          <p>{post.title}</p>
           </Link>
      
+            <h2 className='post-title'>{post.title}</h2>
+          <h3 className='post-author'>{post.author}</h3>
+          
+          {/* {post.content.length > 3000 ?
+            post.content : post.content} */}
+
+          <p className='post-content'>{post.content}</p>
+          
 
           {
             currentUser?.id === post.user_id &&
             <>
             <Link to={`posts/${post.id}/edit`}>
-            <button>Edit</button>
+            <button>edit</button>
             </Link>
             <button onClick={() => handleDelete(post.id)}>Delete</button>
             
             </>
             
           }
-        </React.Fragment>
+        </div>
       ))}
 
           

@@ -2,4 +2,81 @@
 
 body {
   background-color: #313131;
+  color:whitesmoke;
+  font-family: 'Source Code Pro', monospace;
 }
+
+
+
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 60px;
+}
+
+a {
+   color:white;
+   text-decoration: none;
+}
+
+.links {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.post-container {
+  text-align: center;
+  
+}
+
+.post-container p {
+  text-align: center;
+height: 90px;
+width:75%;
+overflow: hidden;  
+text-overflow: ellipsis;
+margin: 0 auto;
+}
+
+.create-form{
+ 
+  
+}
+
+.create-inputs {
+  color:whitesmoke;
+  background: transparent;
+  border-color: #616F39;
+  border-top-style:solid;
+  border-bottom-style:solid;
+  border-left-style: none;
+  border-right-style: none;
+  text-align: center;
+  width: 50%;
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.create-textarea {
+  color:whitesmoke;
+  background: transparent;
+  border-color: #616F39;
+  border-style:solid;
+  width: 75%;
+  height: 300px;
+  border-top-style:solid;
+  border-bottom-style:solid;
+  border-left-style: none;
+  border-right-style: none;
+  font-size: 15px;
+  margin-top: 20px;
+}
+

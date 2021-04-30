@@ -8,24 +8,28 @@ export default function Nav(props) {
 
   return (
     <header>
-      <h1>Salt.</h1>
+      <a className='logo' href="/">
+        <h1>Salt.</h1>
+
+      </a>
+      
       {
         currentUser ?
           <>
             <p>{currentUser.username}</p>
-            <button onClick={handleLogout}>Logout</button>
+            <Link className='links' onClick={handleLogout}>Logout</Link>
           </>
           :
-          <Link to="/login">Login/Register</Link>
+          <Link className='links' to="/login">Login/Register</Link>
         }
 
 
       {
         currentUser &&
         <>
-          <Link to="/posts">All Blog Posts</Link>
+          <Link className='links' to="/posts">All Blog Posts</Link>
          
-          <Link to="/posts/new">
+          <Link className='links' to="/posts/new">
            Create a Post
           </Link>
 

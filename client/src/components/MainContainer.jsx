@@ -68,7 +68,7 @@ export default function MainContainer(props) {
         <BlogDetails
           comments={comments}/>
       </Route>
-      <Route path="/posts">
+      <Route path="/">
         <AllBlogs
           posts={posts}
           handleDelete={handleDelete}
