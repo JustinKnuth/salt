@@ -12,22 +12,10 @@ export default function Nav(props) {
         <h1><em>Salt.</em></h1>
 
       </a>
-      
-      {
-        currentUser ?
-          <>
-            <p>{currentUser.username}</p>
-            <Link className='links' onClick={handleLogout}>Logout</Link>
-          </>
-          :
-          <Link className='links' to="/login">Login/Register</Link>
-        }
-
-
       {
         currentUser &&
         <>
-          <Link className='links' to="/posts">All Blog Posts</Link>
+          {/* <Link className='links' to="/posts">All Blog Posts</Link> */}
          
           <Link className='links' to="/posts/new">
            Create a Post
@@ -35,6 +23,18 @@ export default function Nav(props) {
 
         </>
       }
+      {
+        currentUser ?
+          <>
+            
+            <Link className='links' onClick={handleLogout}>Logout</Link>
+          </>
+          :
+          <Link className='links' to="/login">Login/Register</Link>
+        }
+
+
+      
     </header>
   )
 }

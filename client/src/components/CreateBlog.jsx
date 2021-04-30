@@ -33,7 +33,7 @@ export default function CreatePost(props) {
       e.preventDefault()
       handleCreate(formData)
     }}>
-      <h1 style={{ textAlign: 'center' }}>Create Post</h1>
+      <h1 style={{ textAlign: 'center', color: '#B4FF79' }}>Create Post</h1>
       <label>Title <br/>
        <input
           className='create-inputs'

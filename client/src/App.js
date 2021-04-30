@@ -47,6 +47,7 @@ function App() {
         currentUser={currentUser}
         handleLogout={handleLogout} />
       <hr />
+     
       <Switch>
         <Route path="/login">
           <SignIn handleLogin={handleLogin} />

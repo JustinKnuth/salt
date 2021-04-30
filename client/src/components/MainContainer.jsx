@@ -52,6 +52,9 @@ export default function MainContainer(props) {
 
 
   return (
+    <>
+      
+      
     <Switch>
       <Route path='/posts/:id/edit'>
         <EditPost
@@ -78,6 +81,6 @@ export default function MainContainer(props) {
 
     </Switch>
 
-
+</>
   )
 }

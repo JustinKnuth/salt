@@ -6,6 +6,10 @@ body {
   font-family: 'Source Code Pro', monospace;
 }
 
+i {
+  color:red;
+  background-color: none;
+}
 
 
 

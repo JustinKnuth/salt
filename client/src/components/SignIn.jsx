@@ -27,7 +27,7 @@ export default function SignIn(props) {
       handleLogin(formData)
     }}>
 
-      <h1>Login</h1> 
+      <h1 style = {{ color: " #B4FF79" }}>Login</h1> 
       <label>Username <br/>
       <input
           className="create-inputs"
@@ -45,8 +45,9 @@ export default function SignIn(props) {
           value={password}
           onChange={handleChange} />
       </label> <br/>
-      <button>Submit</button> <br/>
-      <Link to='/register'>Click here to register</Link>
+        <button>Submit</button> <br/><br/>
+        Not a member?<br/><br/>
+      <Link style={{ color: '#FE30A5' }} to='/register'>Click here to register</Link>
       
     </form>
     </center>
