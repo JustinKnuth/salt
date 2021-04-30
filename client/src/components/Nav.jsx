@@ -9,7 +9,7 @@ export default function Nav(props) {
   return (
     <header>
       <a className='logo' href="/">
-        <h1>Salt.</h1>
+        <h1><em>Salt.</em></h1>
 
       </a>
       

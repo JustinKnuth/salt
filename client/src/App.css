@@ -36,13 +36,20 @@ a {
   
 }
 
+.post-container h2{
+  font-size: 30px;
+}
+
 .post-container p {
   text-align: center;
-height: 90px;
+height: 150px;
 width:75%;
-overflow: hidden;  
-text-overflow: ellipsis;
+/* overflow: hidden;  
+text-overflow: ellipsis; */
 margin: 0 auto;
+border-style: solid;
+border-color: white;
+padding: 20px;
 }
 
 .create-form{
