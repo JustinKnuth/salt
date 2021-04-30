@@ -7,6 +7,7 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import { loginUser, registerUser, removeToken, verifyUser } from "./services/auth";
 import MainContainer from "./components/MainContainer";
+import './App.css'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
