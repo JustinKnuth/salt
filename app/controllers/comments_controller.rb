@@ -9,18 +9,29 @@ class CommentsController < ApplicationController
     render json: @comments
   end
 
-  # GET /comments/1
+  #GET /comments/1
   def show
     render json: @comment
   end
 
   # POST /comments
   def create
-    @comment = Comment.new(comment_params)
+    # @post = Post.find(params[:id])
+    
+    @post = Post.find_by(params[:id])
+    @comment = Comment.new(params[:id])
+   
     @comment.user = @current_user
+    #@comment.post = @set_post
+    # @post = Post.find(params[:post_id])
+    
+
+    @comment.post = @post
+    #@post.user = @current_user
+    #@post.comment.push(@comment)
 
     if @comment.save
-      render json: @comment, status: :created
+      render json: @comment 
     else
       render json: @comment.errors, status: :unprocessable_entity
     end
@@ -45,9 +56,12 @@ class CommentsController < ApplicationController
     def set_comment
       @comment = Comment.find(params[:id])
     end
-
+    
+    def post_params
+      params.require(:post).permit(:title, :author, :content, :user_id)
+    end
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:author, :content, :user_id, :post_id)
+      params.require(:comment).permit(:author, :content, :post_id)
     end
 end

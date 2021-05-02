@@ -1,13 +1,23 @@
 import { useState, useEffect } from "react"
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { getOnePost } from "../services/posts"
+import { getAllComments, createComment } from "../services/comments"
 
 
 
 export default function BlogDetails(props) {
   const [postItem, setPostItem] = useState(null)
+  const [comments, setComments] = useState([])
   const { id } = useParams()
-  const { comments } = props
+  const { currentUser } = props
+  const [formData, setFormData] = useState({
+    author: '',
+    content: ''
+   
+    
+    })
+  
+  const { title, author, content } = formData
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -15,16 +25,94 @@ export default function BlogDetails(props) {
       setPostItem(postData)
     }
     fetchPost()
-}, [])
+  }, [])
+  
+
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      const commentData = await getAllComments()
+      setComments(commentData)
+    }
+    fetchComments()
+  }, [])
+
+  const handleCreateComment = async (formData) => {
+    const commentData = await createComment(formData);
+    //setComments(commentData)
+    setComments(prevState => [...prevState, commentData])
+    // history.push('/posts')
+  }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
 
   return (
     <div>
       <h1>{postItem?.title}</h1>
+      <h2>{postItem?.author}</h2>
+      <p>{postItem?.content}</p>
+
       {
+        currentUser ?
+          <>
+            <center>
+              <form className="create-form" onSubmit={(e) => {
+                e.preventDefault()
+                handleCreateComment(formData)
+              }}>
+                {console.log(formData)}
+
+
+                <h2 style={{ textAlign: 'center', color: '#B4FF79' }}>Leave a Comment</h2>
+                {
+                  currentUser &&
+                  <>
+
+                    <p>Comment as {currentUser.username}</p>
+
+                  </>
+                } <br />
+                <label> <br />
+                  <textarea
+                    className='create-textarea-comments'
+                    placeholder="What are your thoughts?"
+                    type="text"
+                    name='author'
+                    value={author}
+                    onChange={handleChange}
+                  />
+                  
+                </label> <br />
+                <label> <br />
+                  <textarea
+                    className='create-textarea-comments'
+                    placeholder="What are your thoughts?"
+                    type="text"
+                    name='content'
+                    value={content}
+                    onChange={handleChange}
+                  />
+                </label> <br />
+
+                <button>Submit</button>
+              </form>
+            </center>
+          </>
+          :
+          ''
+      }
+      {console.log(comments)}
+      {/* {
         postItem?.comments.map((comment) => (
           <p key={comment.id}>{comment.content}</p>
-          ))
-      }
+        ))
+      } */}
     </div>
   )
 }

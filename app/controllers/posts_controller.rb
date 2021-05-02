@@ -12,6 +12,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1
   def show
+    #@comment = Comment.new(:post => @post)
     render json: @post, include: :comments
   end
 
@@ -19,7 +20,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = @current_user
-    
+    #@comment = Comment.new(post_id: params[:post_id])
+
     if @post.save
       render json: @post, status: :created
     else

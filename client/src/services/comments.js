@@ -10,6 +10,7 @@ export const getAllComments = async () => {
 //   const res = await api.get(`/posts/${id}`)
 //   return res.data
 // }
+//`/posts/${id}/comments`
 
 export const createComment = async (commentData) => {
   const res = await api.post('/comments', { comment: commentData })

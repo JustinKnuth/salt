@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { createPost, getAllPosts, putPost, deletePost } from "../services/posts"
-import { getAllComments } from "../services/comments"
+import { getAllComments, createComment } from "../services/comments"
 import { Switch, Route, useHistory } from "react-router-dom"
 import AllBlogs from "./AllBlogs"
 import EditPost from "./EditPost"
@@ -9,7 +9,7 @@ import BlogDetails from "./BlogDetails"
 
 export default function MainContainer(props) {
   const [posts, setPosts] = useState([])
-  const [comments, setComments] = useState([])
+  //const [comments, setComments] = useState([])
   const history = useHistory()
   const { currentUser } = props
 
@@ -22,19 +22,24 @@ export default function MainContainer(props) {
     fetchPosts()
   }, [])
 
-  useEffect(() => {
-    const fetchComments = async () => {
-      const commentData = await getAllComments()
-      setComments(commentData)
-    }
-    fetchComments()
-  }, [])
+  // useEffect(() => {
+  //   const fetchComments = async () => {
+  //     const commentData = await getAllComments()
+  //     setComments(commentData)
+  //   }
+  //   fetchComments()
+  // }, [])
 
   const handleCreate = async (formData) => {
     const postData = await createPost(formData);
     setPosts(prevState => [...prevState, postData])
     history.push('/posts')
   }
+  // const handleCreateComment = async (formData) => {
+  //   const commentData = await createComment(formData);
+  //   setComments(prevState => [...prevState, commentData])
+  //   // history.push('/posts')
+  // }
 
   const handleEdit = async (id, formData) => {
     const postData = await putPost(id, formData)
@@ -69,13 +74,15 @@ export default function MainContainer(props) {
       </Route>
       <Route path='/posts/:id'>
         <BlogDetails
-          comments={comments}/>
+            
+            currentUser={currentUser}/>
       </Route>
       <Route path="/">
         <AllBlogs
-          posts={posts}
-          handleDelete={handleDelete}
-          currentUser={currentUser} />
+            posts={posts}
+            handleDelete={handleDelete}
+            currentUser={currentUser}
+            />
       </Route>
 
 

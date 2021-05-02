@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 
 export default function AllBlogs(props) {
-  const { posts, handleDelete, currentUser } = props
+  const { posts, comments, handleDelete, currentUser } = props
 
 
   const reversePosts = [...posts].reverse()
@@ -12,11 +12,11 @@ export default function AllBlogs(props) {
   return (
     <div>
 
-{
+      {
         currentUser &&
         <>
-          {/* <Link className='links' to="/posts">All Blog Posts</Link> */}
-          <p>Welcome back {currentUser.username}</p>
+
+          <p style={{ marginLeft: '20px' }}>Welcome back {currentUser.username}</p>
 
         </>
       }
@@ -25,7 +25,7 @@ export default function AllBlogs(props) {
       {reversePosts.map(post => (
         <div className='post-container' key={post.id}>
 
-          <Link to={`/posts/${post.id}`}>
+          <Link to={`/posts/${post.id}`}>click
           </Link>
 
           <h2 className='post-title'>{post.title}</h2>
@@ -35,9 +35,16 @@ export default function AllBlogs(props) {
               post.content : post.content = post.content.slice(0, 300) + '......'}
           </p>
           <Link to={`/posts/${post.id}`}>
-          {post.content.length < 300 ?
-            '' : 'Click Here' }
-          </Link><br/>
+            {post.content.length < 300 ?
+              '' : 'Click Here'}
+          </Link><br />
+          <p>{post.comments}</p>
+          
+          
+        {console.log(comments.map((comment) => (
+          <p key={comment.id}>{comment.content}</p>
+        )))}
+      
           {/* <p className='post-content'>{post.content}</p> */}
 
 
@@ -45,9 +52,9 @@ export default function AllBlogs(props) {
             currentUser?.id === post.user_id &&
             <>
               <Link to={`posts/${post.id}/edit`}>
-                <button>edit</button>
+                <button className='edit-delete-buttons' type='submit'><i className="fas fa-edit"></i></button>
               </Link>
-              <div onClick={() => handleDelete(post.id)}><i className="fas fa-trash"></i></div>
+              <button className="edit-delete-buttons" onClick={() => handleDelete(post.id)}><i className="fas fa-trash"></i></button>
 
             </>
 
