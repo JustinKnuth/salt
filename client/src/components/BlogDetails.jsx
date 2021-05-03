@@ -10,7 +10,7 @@ export default function BlogDetails(props) {
   const { id } = useParams()
   const { currentUser } = props
   const [formData, setFormData] = useState({
-    author: '',
+    author: currentUser?.username,
     content: '',
     user_id: '',
     post_id: Number(id)
@@ -52,58 +52,65 @@ export default function BlogDetails(props) {
   return (
     <div>
       <center>
-        <h1>{postItem?.title}</h1>
-        <h2>{postItem?.author}</h2>
-        <p>{postItem?.content}</p>
+        <h1 style={{fontSize:'40px'}}>{postItem?.title}</h1>
+        <h2>By {postItem?.author}</h2>
+        <p style={{ margin: '20px' }}>{postItem?.content}</p>
 
       </center>
 
-
-      <>
-        <center>
-          <form className="create-form" onSubmit={(e) => {
-            e.preventDefault()
-            handleCreateComment(formData)
-          }}>
-
-
-
-            <h2 style={{ textAlign: 'center', color: '#B4FF79' }}>Leave a Comment</h2>
-            <br />
-            <label> <br />
-              <input
-                className='create-inputs'
-                placeholder="Enter name or anonymous"
-                type="text"
-                name='author'
-                value={author}
-                onChange={handleChange}
-              />
-
-            </label> <br />
-            <label> <br />
-              <textarea
-                className='create-textarea-comments'
-                placeholder="What are your thoughts?"
-                type="text"
-                name='content'
-                value={content}
-                onChange={handleChange}
-              />
-            </label> <br />
-
-            <button>Submit</button>
-          </form>
-        </center>
-      </>
-
-
-
       {
-        postItem?.comments.map((comment) => (
-          <p key={comment.id}>{comment.content}</p>
-        ))
-      }
+        currentUser ?
+          <>
+            <center>
+              <form className="create-form" onSubmit={(e) => {
+                e.preventDefault()
+                handleCreateComment(formData)
+              }}>
+
+
+
+                <h2 style={{ textAlign: 'center', color: '#B4FF79', marginTop: '70px' }}>Leave a Comment</h2>
+                <br />
+                <label> <br />
+                  <input
+                    className='create-inputs'
+                    type="text"
+                    placeholder="Whats your name?"
+                    name='author'
+                    value={author}
+                    onChange={handleChange}
+                  /> <br />
+                </label>
+                <label> <br />
+                  <textarea
+                    className='create-textarea-comments'
+                    placeholder="What are your thoughts?"
+                    type="text"
+                    name='content'
+                    value={content}
+                    onChange={handleChange}
+                  />
+                </label> <br />
+
+                <button>Submit</button>
+              </form>
+            </center>
+          </>
+          :
+          ''
+        }
+      <center>
+        {
+          postItem?.comments.map((comment) => (
+            <div className='comments'>
+              <h3>{comment.author}</h3>
+              <p key={comment.id}>{comment.content}</p>
+
+            </div>
+          ))
+        }
+
+      </center>
     </div>
   )
 }

@@ -40,7 +40,7 @@ export default function SignIn(props) {
       <label>Password <br/>
        <input
           className="create-inputs"
-          type="text"
+          type="password"
           name="password"
           value={password}
           onChange={handleChange} />
