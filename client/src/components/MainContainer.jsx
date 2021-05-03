@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { createPost, getAllPosts, putPost, deletePost } from "../services/posts"
-import { getAllComments, createComment } from "../services/comments"
 import { Switch, Route, useHistory } from "react-router-dom"
 import AllBlogs from "./AllBlogs"
 import EditPost from "./EditPost"

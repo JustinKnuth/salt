@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 
 export default function AllBlogs(props) {
-  const { posts, comments, handleDelete, currentUser } = props
+  const { posts, handleDelete, currentUser } = props
 
 
   const reversePosts = [...posts].reverse()

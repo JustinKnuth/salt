@@ -2,7 +2,6 @@
 import { Switch, Route, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 // components
-import Home from "./components/Home"
 import Nav from "./components/Nav";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";

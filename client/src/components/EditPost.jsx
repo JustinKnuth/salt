@@ -27,7 +27,7 @@ export default function EditPost(props) {
       
     }
 
-  }, [posts])
+  }, [posts, id])
 
 
 
