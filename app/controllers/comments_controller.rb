@@ -18,15 +18,15 @@ class CommentsController < ApplicationController
   def create
     # @post = Post.find(params[:id])
     
-    @post = Post.find_by(params[:id])
-    @comment = Comment.new(params[:id])
+    
+    @comment = Comment.new(comment_params)
    
     @comment.user = @current_user
     #@comment.post = @set_post
     # @post = Post.find(params[:post_id])
     
 
-    @comment.post = @post
+   # @comment.post = @post
     #@post.user = @current_user
     #@post.comment.push(@comment)
 
@@ -62,6 +62,6 @@ class CommentsController < ApplicationController
     end
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:author, :content, :post_id)
+      params.require(:comment).permit(:author, :content, :user_id, :post_id)
     end
 end

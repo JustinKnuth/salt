@@ -38,12 +38,10 @@ export default function AllBlogs(props) {
             {post.content.length < 300 ?
               '' : 'Click Here'}
           </Link><br />
-          <p>{post.comments}</p>
+          {/* <p>{post.comments}</p> */}
           
           
-        {console.log(comments.map((comment) => (
-          <p key={comment.id}>{comment.content}</p>
-        )))}
+        
       
           {/* <p className='post-content'>{post.content}</p> */}
 

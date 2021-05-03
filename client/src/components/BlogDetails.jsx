@@ -12,12 +12,14 @@ export default function BlogDetails(props) {
   const { currentUser } = props
   const [formData, setFormData] = useState({
     author: '',
-    content: ''
-   
-    
-    })
+    content: '',
+    user_id: '',
+    post_id: Number(id)
+  })
+
+  //console.log(currentUser.id)
   
-  const { title, author, content } = formData
+  const { author, content } = formData
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -38,6 +40,7 @@ export default function BlogDetails(props) {
   }, [])
 
   const handleCreateComment = async (formData) => {
+    formData.user_id = currentUser.id
     const commentData = await createComment(formData);
     //setComments(commentData)
     setComments(prevState => [...prevState, commentData])
@@ -54,30 +57,25 @@ export default function BlogDetails(props) {
 
   return (
     <div>
+      <center>
       <h1>{postItem?.title}</h1>
       <h2>{postItem?.author}</h2>
       <p>{postItem?.content}</p>
 
-      {
-        currentUser ?
+      </center>
+
+      
           <>
             <center>
               <form className="create-form" onSubmit={(e) => {
                 e.preventDefault()
                 handleCreateComment(formData)
               }}>
-                {console.log(formData)}
+                
 
 
                 <h2 style={{ textAlign: 'center', color: '#B4FF79' }}>Leave a Comment</h2>
-                {
-                  currentUser &&
-                  <>
-
-                    <p>Comment as {currentUser.username}</p>
-
-                  </>
-                } <br />
+                <br />
                 <label> <br />
                   <textarea
                     className='create-textarea-comments'
@@ -104,15 +102,14 @@ export default function BlogDetails(props) {
               </form>
             </center>
           </>
-          :
-          ''
-      }
-      {console.log(comments)}
-      {/* {
+          
+      
+      
+      {
         postItem?.comments.map((comment) => (
           <p key={comment.id}>{comment.content}</p>
         ))
-      } */}
+      }
     </div>
   )
 }
