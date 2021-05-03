@@ -51,7 +51,7 @@ a {
   color: whitesmoke;
   font-size: 25px;
 }
-@media and screen (max-width: 570px ){
+@media screen and (max-width: 570px ){
   .links {
     font-size: 17px;
   }
