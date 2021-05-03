@@ -16,7 +16,7 @@ export default function BlogDetails(props) {
     user_id: '',
     post_id: Number(id)
   })
-
+const [reload, setReload] = useState(false)
   //console.log(currentUser.id)
   
   const { author, content } = formData
@@ -25,9 +25,10 @@ export default function BlogDetails(props) {
     const fetchPost = async () => {
       const postData = await getOnePost(id)
       setPostItem(postData)
-    }
+      }
+    window.scrollTo(0,0)
     fetchPost()
-  }, [])
+  }, [reload])
   
 
 
@@ -42,9 +43,14 @@ export default function BlogDetails(props) {
   const handleCreateComment = async (formData) => {
     formData.user_id = currentUser.id
     const commentData = await createComment(formData);
-    //setComments(commentData)
-    setComments(prevState => [...prevState, commentData])
-    // history.push('/posts')
+    //setComments(prevState => [...prevState, formData])
+    setReload(!reload)
+    setFormData({
+      author: '',
+      content: '',
+      user_id: '',
+      post_id: Number(id)
+    })
   }
 
   const handleChange = (e) => {
@@ -77,9 +83,9 @@ export default function BlogDetails(props) {
                 <h2 style={{ textAlign: 'center', color: '#B4FF79' }}>Leave a Comment</h2>
                 <br />
                 <label> <br />
-                  <textarea
-                    className='create-textarea-comments'
-                    placeholder="What are your thoughts?"
+                  <input
+                    className='create-inputs'
+                    placeholder="Enter name or anonymous"
                     type="text"
                     name='author'
                     value={author}
