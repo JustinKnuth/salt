@@ -32,7 +32,7 @@ export default function AllBlogs(props) {
           <h3 className='post-author'>{post.author}</h3>
           <p className='post-content'>
             {post.content.length < 300 ?
-              post.content : post.content = post.content.slice(0, 300) + '......'}
+              post.content : post.content.slice(0, 300) + '......'}
           </p>
           <Link to={`/posts/${post.id}`}>
             {post.content.length < 300 ?
