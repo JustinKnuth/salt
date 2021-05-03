@@ -25,7 +25,7 @@ export default function SignUp(props) {
     }}>
 
       <h1>Register</h1>
-      <label>Choose a username <br/>
+      <label>Username <br/>
       <input
           className='create-inputs'
           type="text"
@@ -34,7 +34,7 @@ export default function SignUp(props) {
           onChange={handleChange} />
       </label> <br/>
       <br/>
-        <label>Password must be at least 6 characters <br/>
+        <label>Password (at least 6 characters) <br/>
        <input
           className='create-inputs'
           type="text"

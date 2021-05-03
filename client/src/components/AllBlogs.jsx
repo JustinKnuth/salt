@@ -28,6 +28,7 @@ export default function AllBlogs(props) {
 
           <h2 className='post-title'>{post.title}</h2>
           <h3 className='post-author'>By {post.author}</h3>
+          {post.created_at.slice(0,10)}
           <p className='post-content'>
             {post.content.length < 400 ?
               post.content : post.content.slice(0, 400) + '......'}
@@ -37,7 +38,7 @@ export default function AllBlogs(props) {
             <Link className='full-post-link' to={`/posts/${post.id}`}>
               See the full post
           </Link>
-              {post.created_at.slice(0,10)}
+              
             {
               currentUser?.id === post.user_id &&
               <div>
