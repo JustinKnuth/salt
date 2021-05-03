@@ -9,6 +9,7 @@ export default function AllBlogs(props) {
   const reversePosts = [...posts].reverse()
 
 
+
   return (
     <div>
 
@@ -25,38 +26,33 @@ export default function AllBlogs(props) {
       {reversePosts.map(post => (
         <div className='post-container' key={post.id}>
 
-          <Link to={`/posts/${post.id}`}>click
-          </Link>
-
           <h2 className='post-title'>{post.title}</h2>
           <h3 className='post-author'>{post.author}</h3>
           <p className='post-content'>
             {post.content.length < 300 ?
               post.content : post.content.slice(0, 300) + '......'}
           </p>
-          <Link to={`/posts/${post.id}`}>
-            {post.content.length < 300 ?
-              '' : 'Click Here'}
-          </Link><br />
-          {/* <p>{post.comments}</p> */}
-          
-          
-        
-      
-          {/* <p className='post-content'>{post.content}</p> */}
+          <div className='link-buttons'>
 
 
-          {
-            currentUser?.id === post.user_id &&
-            <>
-              <Link to={`posts/${post.id}/edit`}>
-                <button className='edit-delete-buttons' type='submit'><i className="fas fa-edit"></i></button>
-              </Link>
-              <button className="edit-delete-buttons" onClick={() => handleDelete(post.id)}><i className="fas fa-trash"></i></button>
+            <Link className='full-post-link' to={`/posts/${post.id}`}>
+              Click here to read the full post
+          </Link>
 
-            </>
+            {
+              currentUser?.id === post.user_id &&
+              <div>
 
-          }<br />
+                <Link className='edit-icon' to={`posts/${post.id}/edit`}>
+                  <button className='edit-delete-buttons' type='submit'><i className="fas fa-edit"></i></button>
+                </Link>
+                <button className="edit-delete-buttons" onClick={() => handleDelete(post.id)}><i className="fas fa-trash"></i></button>
+              </div>
+              
+            }
+          </div>
+          <br />
+          <hr />
 
         </div>
       ))}
