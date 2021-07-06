@@ -1,6 +1,6 @@
 # Salt.
 Blog
-
+https://salt-blog.surge.sh
 
 - [Overview](#overview)
 - [MVP](#mvp)
