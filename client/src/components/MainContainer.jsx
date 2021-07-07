@@ -23,8 +23,6 @@ export default function MainContainer(props) {
     fetchPosts()
   }, [])
 
-  console.log(posts)
-
   useEffect(() => {
     const fetchComments = async () => {
       const commentData = await getAllComments()
@@ -32,7 +30,6 @@ export default function MainContainer(props) {
     }
     fetchComments()
   }, [])
-  console.log(comments)
 
   const handleCreate = async (formData) => {
     const postData = await createPost(formData);
@@ -62,38 +59,39 @@ export default function MainContainer(props) {
 
   return (
     <>
-      
-      
-    <Switch>
-      <Route path='/posts/:id/edit'>
-        <EditPost
-          posts={posts}
-          handleEdit={handleEdit} />
-      </Route>
-      <Route exact path="/posts/new">
-        <CreateBlog
-          handleCreate={handleCreate}
 
-        />
-      </Route>
-      <Route path='/posts/:id'>
-        <BlogDetails
-            
-            currentUser={currentUser}/>
-      </Route>
-      <Route path="/">
-        <AllBlogs
+
+      <Switch>
+        <Route path='/posts/:id/edit'>
+          <EditPost
             posts={posts}
+            handleEdit={handleEdit} />
+        </Route>
+        <Route exact path="/posts/new">
+          <CreateBlog
+            handleCreate={handleCreate}
+
+          />
+        </Route>
+        <Route path='/posts/:id'>
+          <BlogDetails
+
+            currentUser={currentUser} />
+        </Route>
+        <Route path="/">
+          <AllBlogs
+            posts={posts}
+            setPosts={setPosts}
             handleDelete={handleDelete}
             currentUser={currentUser}
-            comments={comments}
             page={page}
-            />
-      </Route>
+            setPage={setPage}
+          />
+        </Route>
 
 
-    </Switch>
+      </Switch>
 
-</>
+    </>
   )
 }
