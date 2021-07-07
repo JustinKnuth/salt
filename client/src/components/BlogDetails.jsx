@@ -28,6 +28,8 @@ export default function BlogDetails(props) {
     fetchPost()
   }, [reload, id])
 
+  console.log(postItem)
+
 
   const handleCreateComment = async (formData) => {
     formData.user_id = currentUser.id
@@ -104,7 +106,8 @@ export default function BlogDetails(props) {
           postItem?.comments.map((comment) => (
             <div className='comments'>
               <h3>{comment.author}</h3>
-              <p key={comment.id}>{comment.content}</p>
+              {comment.created_at.slice(0, 10)}
+              <p style={{ wordWrap: 'break-word', padding:'0 15px' }} key={comment.id}>{comment.content}</p>
 
             </div>
           ))

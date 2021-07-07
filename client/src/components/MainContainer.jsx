@@ -10,13 +10,14 @@ import BlogDetails from "./BlogDetails"
 export default function MainContainer(props) {
   const [posts, setPosts] = useState([])
   const [comments, setComments] = useState([])
+  const [page, setPage] = useState(1)
   const history = useHistory()
   const { currentUser } = props
 
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const postData = await getAllPosts()
+      const postData = await getAllPosts(page)
       setPosts(postData)
     }
     fetchPosts()
@@ -29,7 +30,6 @@ export default function MainContainer(props) {
     }
     fetchComments()
   }, [])
-  console.log(comments)
 
   const handleCreate = async (formData) => {
     const postData = await createPost(formData);
@@ -59,37 +59,39 @@ export default function MainContainer(props) {
 
   return (
     <>
-      
-      
-    <Switch>
-      <Route path='/posts/:id/edit'>
-        <EditPost
-          posts={posts}
-          handleEdit={handleEdit} />
-      </Route>
-      <Route exact path="/posts/new">
-        <CreateBlog
-          handleCreate={handleCreate}
 
-        />
-      </Route>
-      <Route path='/posts/:id'>
-        <BlogDetails
-            
-            currentUser={currentUser}/>
-      </Route>
-      <Route path="/">
-        <AllBlogs
+
+      <Switch>
+        <Route path='/posts/:id/edit'>
+          <EditPost
             posts={posts}
+            handleEdit={handleEdit} />
+        </Route>
+        <Route exact path="/posts/new">
+          <CreateBlog
+            handleCreate={handleCreate}
+
+          />
+        </Route>
+        <Route path='/posts/:id'>
+          <BlogDetails
+
+            currentUser={currentUser} />
+        </Route>
+        <Route path="/">
+          <AllBlogs
+            posts={posts}
+            setPosts={setPosts}
             handleDelete={handleDelete}
             currentUser={currentUser}
-            comments={comments}
-            />
-      </Route>
+            page={page}
+            setPage={setPage}
+          />
+        </Route>
 
 
-    </Switch>
+      </Switch>
 
-</>
+    </>
   )
 }
