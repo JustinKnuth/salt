@@ -20,6 +20,21 @@ puts "#{User.count} users created"
 @post3 = Post.create!(title: 'fwdnfdps', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
 @post4 = Post.create!(title: 'poossssps', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
 @post5 = Post.create!(title: 'poddddops', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post6 = Post.create!(title: 'poops', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post7 = Post.create!(title: 'ebqgdps', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post8 = Post.create!(title: 'fwdnfdps', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post9 = Post.create!(title: 'poossssps', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post10 = Post.create!(title: 'poddddops', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post11 = Post.create!(title: 'poops', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post12 = Post.create!(title: 'ebqgdps', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post13 = Post.create!(title: 'fwdnfdps', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post14 = Post.create!(title: 'poossssps', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post15 = Post.create!(title: 'poddddops', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post16 = Post.create!(title: 'poops', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post17 = Post.create!(title: 'ebqgdps', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post18 = Post.create!(title: 'fwdnfdps', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post19 = Post.create!(title: 'poossssps', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
+@post20 = Post.create!(title: 'poddddops', author: 'finroo', content: 'this is a post this is a post this is a post', user: @user)
 
 puts "#{Post.count} posts created"
 

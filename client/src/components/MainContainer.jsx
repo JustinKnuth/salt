@@ -10,17 +10,20 @@ import BlogDetails from "./BlogDetails"
 export default function MainContainer(props) {
   const [posts, setPosts] = useState([])
   const [comments, setComments] = useState([])
+  const [page, setPage] = useState(1)
   const history = useHistory()
   const { currentUser } = props
 
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const postData = await getAllPosts()
+      const postData = await getAllPosts(page)
       setPosts(postData)
     }
     fetchPosts()
   }, [])
+
+  console.log(posts)
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -84,6 +87,7 @@ export default function MainContainer(props) {
             handleDelete={handleDelete}
             currentUser={currentUser}
             comments={comments}
+            page={page}
             />
       </Route>
 

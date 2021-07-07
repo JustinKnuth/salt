@@ -1,10 +1,14 @@
 import api from './api-helper'
 
 
-export const getAllPosts = async () => {
-  const res = await api.get('/posts')
+export const getAllPosts = async (page) => {
+  const res = await api.get(`/posts/?page=${page}`)
   return res.data
 }
+// export const getAllPosts = async (page) => {
+//   const res = await api.get('/posts/?page=5')
+//   return res.data
+// }
 
 export const getOnePost = async (id) => {
   const res = await api.get(`/posts/${id}`)

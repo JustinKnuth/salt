@@ -23,7 +23,7 @@ export default function AllBlogs(props) {
       }
 
       
-      {reversePosts.map(post => (
+      {posts.map(post => (
         <div className='post-container' key={post.id}>
 
           <h2 className='post-title'>{post.title}</h2>
